@@ -23,7 +23,7 @@ public class ChunkGenerator {
      * Generate a flat world and add an event callback to specify the spawning instance
      * and the spawn position.
      */
-    private void Flat() {
+    public void flat() {
         instanceContainer.setGenerator(unit -> {
             // Generate a flat world
             unit.modifier().fillHeight(0, 63, Block.DIRT);
@@ -39,15 +39,15 @@ public class ChunkGenerator {
         });
     }
 
-    private void Normal() {
+    public void normal() {
         System.out.println("Not implemented yet");
     }
 
-    private void Amplified() {
+    public void amplified() {
         System.out.println("Not implemented yet");
     }
 
-    private void Custom() {
+    public void custom() {
         System.out.println("Not implemented yet");
     }
 }
