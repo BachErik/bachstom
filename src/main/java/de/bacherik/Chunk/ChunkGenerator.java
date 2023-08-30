@@ -12,17 +12,17 @@ public class ChunkGenerator {
 
     private final InstanceContainer instanceContainer;
 
-    public ChunkGenerator(InstanceContainer instanceContainer, WorldType worldType) {
+    /**
+     * @param instanceContainer InstanceContainer from InstanceManager
+     */
+    public ChunkGenerator(InstanceContainer instanceContainer) {
         this.instanceContainer = instanceContainer;
-
-        switch (worldType) {
-            case FLAT -> Flat();
-            case NORMAL -> Normal();
-            case AMPLIFIED -> Amplified();
-            case CUSTOM -> Custom();
-        }
     }
 
+    /**
+     * Generate a flat world and add an event callback to specify the spawning instance
+     * and the spawn position.
+     */
     private void Flat() {
         instanceContainer.setGenerator(unit -> {
             // Generate a flat world
